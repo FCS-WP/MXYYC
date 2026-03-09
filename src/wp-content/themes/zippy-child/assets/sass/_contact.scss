@@ -1,0 +1,52 @@
+.yyc-contact-header {
+    .col-inner {
+        @extend %border-radius-small;
+    
+        background-color: $card-color;
+        padding: 20px 30px;
+
+        @include max(600px) {
+            padding: 15px 20px;
+        }
+    }
+
+    span {
+        word-wrap: break-word;
+    }
+}
+
+.yyc-contact-footer .wpcf7 form {
+    label {
+        color: $black;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        border-radius: 100px;
+        text-transform: none;
+        box-shadow: none;
+        
+        &:not(.wpcf7-not-valid) {
+            border-color: $black;
+            color: $black;
+        }
+    }
+
+    textarea {
+        border-radius: 20px;
+    }
+    
+    .wpcf7-not-valid-tip {
+        background-color: transparent;
+
+        &::after {
+            content: none;
+        }
+    }
+
+    input[type="submit"] {
+        border-radius: 100px;
+        text-transform: none;
+    }
+}

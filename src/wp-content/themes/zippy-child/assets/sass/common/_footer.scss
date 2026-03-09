@@ -1,0 +1,79 @@
+.mxyyc-footer {
+    & > div > .col-inner {
+        @extend %border-radius;
+
+        background-color: $footer-color;
+        padding: 50px 40px 0;
+    }
+
+    & &__logo .img-inner {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: white;
+        padding: 15px;
+    }
+
+    & &__logo img {
+        object-fit: contain;
+    }
+
+    &__menu a.ux-menu-link__link {
+        font-weight: normal;
+        min-height: 1.5em;
+        padding: 0px;
+        padding-bottom: 0.7em;
+    }
+
+    &__copyright {
+        padding-top: 25px;
+    }
+
+    & > div > .col-inner .col {
+        @include max(910px) {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &__whatsapp {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-image: url($assets_path + 'icons/whatsapp.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    h2,
+    h3,
+    p,
+    span,
+    a {
+        color: white;
+    }
+
+    h2,
+    h3,
+    a {
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: white;
+    }
+}
+
+.button.back-to-top {
+    left: 40px;
+    bottom: 40px;
+    right: auto;
+}
