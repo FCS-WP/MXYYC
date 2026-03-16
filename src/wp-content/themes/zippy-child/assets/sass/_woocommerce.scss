@@ -26,19 +26,6 @@
     }
 }
 
-.shop-container {
-    .row-small > .col {
-        padding: 0 15px 30px;
-    }
-
-    .small-columns-2 > .col {
-        @include max(450px) {
-            flex-basis: 100%;
-            max-width: 100%;
-        }
-    }
-}
-
 .woocommerce-ordering {
     select {
         border-radius: 30px;

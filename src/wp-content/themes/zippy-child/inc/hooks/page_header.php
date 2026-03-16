@@ -4,13 +4,15 @@
 function yyc_flatsome_page_header_shortcode($atts) {
   ob_start();
   ?>
-  <div id="page-header-yyc" class="page-header-wrapper has-block">
+  <div id="page-header-yyc" class="page-header-wrapper has-block container">
     <div class="page-title light simple-title">
       <div class="page-title-inner container align-center text-center flex-row-col medium-flex-wrap">
         <div class="title-wrapper is-xlarge flex-col">
           <h1 class="entry-title mb-0">
             <?php if (is_shop() || is_product()) : ?>
               <?php echo woocommerce_page_title(); ?>
+            <?php elseif (is_home()) : ?>
+              <?php echo 'Blog'; ?>
             <?php elseif (is_product_category()) : ?>
               <?php
                 $term = get_queried_object();
@@ -22,17 +24,6 @@ function yyc_flatsome_page_header_shortcode($atts) {
           </h1>
         </div>
       </div>
-      <style>
-        #page-header-yyc .page-title-inner {
-          min-height: 200px;
-        }
-        #page-header-yyc .title-overlay {
-          background-color: rgba(255, 255, 255, 0);
-        }
-        #page-header-yyc {
-          background-color: rgba(255, 255, 255, 0);
-        }
-      </style>
     </div>
   </div>
   <?php
@@ -42,3 +33,7 @@ function yyc_flatsome_page_header_shortcode($atts) {
 }
 
 add_shortcode("yyc_page_header", "yyc_flatsome_page_header_shortcode");
+
+add_action('flatsome_after_header', function() {
+  echo do_shortcode('[yyc_page_header]');
+}, 10);
