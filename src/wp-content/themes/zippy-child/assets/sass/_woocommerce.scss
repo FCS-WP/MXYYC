@@ -34,6 +34,7 @@
     }
 }
 
+
 /* ============== Product Page ============== */
 .woocommerce-product-gallery {
     .woocommerce-product-gallery__wrapper {
@@ -239,6 +240,8 @@ body #wrapper > .message-wrapper {
         z-index: 5;
 
         &::before {
+            @extend %border-radius;
+
             content: '';
             display: block;
             position: absolute;
@@ -247,8 +250,8 @@ body #wrapper > .message-wrapper {
             right: 15px;
             height: 100%;
             background-color: $black;
-            border-radius: 100px;
             z-index: -1;
+            border-top: 1px solid white;
         }
     }
 }
@@ -264,10 +267,104 @@ body:not(.woocommerce-block-theme-has-button-styles) .wc-block-components-button
     }
 }
 
+body.woocommerce-cart {
+    .cart_totals .button {
+        border-radius: 30px !important;
+    }
+
+    input[type="text"],
+    button[type=submit],
+    .button-continue-shopping {
+        @extend %border-radius;
+    }
+}
+
+
+
 /* ============== Checkout ============== */
 .checkout .nav-spacing-xlarge>li {
     margin: 0 13px;
 }
+
+body.woocommerce-checkout {
+    button#place_order {
+        border-radius: 30px !important;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    textarea,
+    .select2-container .select2-selection {
+        @extend %border-radius-small;
+    }
+
+    .select2-container--open .select2-dropdown--below {
+        border-radius: 0 0 10px 10px;
+        overflow: hidden;
+    }
+}
+
+
+/* ============== Mini Cart ============== */
+.widget_shopping_cart ul.product_list_widget li {
+    a {
+        color: white;
+    }
+
+    .ux-mini-cart-qty .quantity {
+        color: white;
+        opacity: 1;
+    }
+
+    .ux-mini-cart-qty .woocommerce-Price-amount {
+        color: white;
+    }
+}
+
+.widget_shopping_cart .ux-mini-cart-footer {
+    .woocommerce-Price-amount {
+        color: white;
+    }
+}
+
+.widget_shopping_cart .woocommerce-mini-cart__buttons .button {
+    @extend %border-radius;
+}
+
+.off-canvas .mfp-content.off-canvas-cart {
+    @extend %border-radius;
+
+    background-color: $footer-color;
+
+    .cart-popup-title > span {
+        color: white;
+    }
+
+    .is-divider {
+        background-color: white;
+    }
+
+    .ux-mini-cart-footer {
+        background-color: rgba($black, 0.2);
+    }
+
+    strong {
+        color: white;
+    }
+}
+
+body .mfp-ready .mfp-close {
+    top: 15px;
+    right: 15px;
+    opacity: 1;
+    mix-blend-mode: unset;
+
+    svg {
+        border: 1px solid white;
+    }
+}
+
 
 /* ============== Common ============== */
 body [data-icon-label]:after {

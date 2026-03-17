@@ -12,6 +12,10 @@
     filter: invert(100%);
 }
 
+.header .searchform .button.icon.loading i {
+    opacity: 0;
+}
+
 .header .stuck .header-inner {
     background-color: white;
 }
@@ -121,6 +125,31 @@ body.nav-dropdown-has-arrow li.has-dropdown:after {
     }
 }
 
+.header .nav-dropdown.nav-dropdown-simple li.html {
+    padding-bottom: 0;
+
+    form > .flex-row {
+        @extend %border-radius-small;
+        overflow: hidden;
+    }
+
+    .autocomplete-suggestion img+.search-name {
+        color: white;
+    }
+
+    .autocomplete-suggestion .search-price .woocommerce-Price-amount.amount {
+        color: white;
+    }
+
+    .autocomplete-suggestion .search-name {
+        color: white;
+    }
+
+    .autocomplete-suggestion {
+        border-color: white;
+    }
+}
+
 
 /* ============== Mobile Menu ============== */
 body .off-canvas-center .mfp-container {
@@ -186,9 +215,25 @@ body .off-canvas-center .social-icons i {
 }
 
 body .off-canvas-center .searchform {
-    @extend %border-radius;
+    @extend %border-radius-small;
 
     overflow: hidden;
+
+    .autocomplete-suggestions {
+        background-color: white;
+    }
+
+    .autocomplete-suggestion img+.search-name {
+        color: $black;
+    }
+
+    .autocomplete-suggestion .search-price .woocommerce-Price-amount.amount {
+        color: $black;
+    }
+
+    .autocomplete-suggestion .search-name {
+        color: $black;
+    }
 }
 
 body .header .header-inner .current-lightbox-clicked .icon-menu::before {
