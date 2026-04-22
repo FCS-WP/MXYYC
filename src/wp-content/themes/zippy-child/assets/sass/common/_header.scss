@@ -267,6 +267,18 @@ body.home #page-header-yyc {
     padding-top: 20px;
     padding-bottom: 20px;
     position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.31);
+        z-index: 1;
+    }
 }
 
 #page-header-yyc .title-overlay {
@@ -309,4 +321,5 @@ body.home #page-header-yyc {
 
 #page-header-yyc .title-wrapper {
     position: relative;
+    z-index: 1;
 }
