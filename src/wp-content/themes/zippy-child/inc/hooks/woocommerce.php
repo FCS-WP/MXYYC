@@ -1,10 +1,14 @@
 <?php
 
 /**
- * Add 'All' option to product category widget
+ * Add 'All' option to product category widget and order by menu_order.
+ * menu_order is a stable, built-in term field so ordering never shuffles.
  */
 add_filter('woocommerce_product_categories_widget_args', function($args) {
     $args['show_option_all'] = 'All';
+    $args['orderby']         = 'menu_order';
+    $args['menu_order']      = 'asc';
+
     return $args;
 });
 

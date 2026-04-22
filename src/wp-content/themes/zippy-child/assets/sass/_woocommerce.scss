@@ -370,3 +370,9 @@ body .mfp-ready .mfp-close {
 body [data-icon-label]:after {
     background-color: $black;
 }
+
+.product-small .box-image img {
+    aspect-ratio: 183 / 256;
+    object-fit: contain;
+    mix-blend-mode: darken;
+}
